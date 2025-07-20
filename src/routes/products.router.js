@@ -9,7 +9,7 @@ import {
     deleteProduct,
 } from "../controllers/products.controller.js";
 
-import { auth } from "./middlewares/auth.middlewares.js"
+import { auth } from "../middlewares/auth.middleware.js";
 
 //Rutas para obtener datos del servidor, solo lee información
     //Obtiene todos los productos del servidor

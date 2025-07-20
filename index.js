@@ -14,6 +14,12 @@ app.get("/", (req, res) => {
     res.send("API Rest en Node.js")
 });
 
+import productsRouter from "./src/routes/products.router.js";
+app.use("/api", productsRouter);
+
+import authRouter from "./src/routes/auth.router.js";
+app.use("/api/auth", authRouter);
+
 app.use((req, res, next) => {
     res.status(404).json({
         status: 404,
