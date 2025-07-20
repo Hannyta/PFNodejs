@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("API Rest en Node.js")
+    res.json("Bienvenidos a la API Rest de NodeJs")
 });
 
 import productsRouter from "./src/routes/products.router.js";

@@ -1,7 +1,7 @@
 {
   "name": "pfnodejs",
   "version": "1.0.0",
-  "description": "API Rest en Node.js",
+  "description": "Sistema de Gestión de Productos con Express y Firebase",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
