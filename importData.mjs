@@ -29,9 +29,9 @@ async function importData() {
   for (const product of products) {
     try {
       await db.collection('products').doc(String(product.id)).set(product);
-      console.log(`✅ Producto agregado: ${product.name}`);
+      console.log(`✅ Producto agregado: ${product.Descripcion}`);
     } catch (error) {
-      console.error(`❌ Error al agregar ${product.name}:`, error);
+      console.error(`❌ Error al agregar ${product.Descripcion}:`, error);
     }
   }
   console.log('🎉 Importación completada');
