@@ -4,8 +4,8 @@ export const getAllProducts = async () => {
     return await Model.getAllProducts();
 }
 
-export const getAllProductById = async (id) => {
-    return await Model.getAllProductById(id);
+export const getProductById = async (id) => {
+    return await Model.getProductById(id);
 }
 
 export const createProduct = async (newProduct) => {

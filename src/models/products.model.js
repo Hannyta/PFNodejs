@@ -12,6 +12,7 @@ import{
 
 const productsCollection = collection(db, "products");
 
+//GET
 export const getAllProducts = async () => {
   try {
     const snapshot = await getDocs(productsCollection);
@@ -25,6 +26,7 @@ export const getAllProducts = async () => {
   }
 };
 
+//GET
 export const getProductById = async (id) => {
   try {
     const docRef = doc(productsCollection, id);
@@ -39,15 +41,23 @@ export const getProductById = async (id) => {
   }
 };
 
+//POST
 export const createProduct = async (newProduct) => {
   try {
-    const docRef = await addDoc(productsCollection, newProduct);
+    // referencia al documento con tu id
+    const docRef = doc(productsCollection, newProduct.id);
+
+    // setear el documento
+    await setDoc(docRef, newProduct);
+
+    // const docRef = await addDoc(productsCollection, newProduct);
     return { id: docRef.id, ...newProduct };
   } catch (error) {
     console.error(error);
   }
 };
 
+//PUT
 export const updateProduct = async (id, updatedProductData) => {
   try {
     const docRef = doc(productsCollection, id);
@@ -59,6 +69,7 @@ export const updateProduct = async (id, updatedProductData) => {
   }
 };
 
+//DELETE
 export const deleteProduct = async (id) => {
   try {
     const docRef = doc(productsCollection, id);

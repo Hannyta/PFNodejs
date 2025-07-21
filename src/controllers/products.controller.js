@@ -7,9 +7,9 @@ export const getAllProducts = async (req, res) => {
 
 export const getProductById = async (req, res) => {
     const {id} = req.params;
-    const products = await Service.getProductById(id);
+    const product = await Service.getProductById(id);
     if (product) {
-        res.json(products);
+        res.json(product);
     } else {
         res.status(404).json({
         status: 404,
